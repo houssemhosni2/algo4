@@ -1,0 +1,27 @@
+ALGORITHM sort
+VAR
+    t : ARRAY_OF INTEGER[10];
+    i,j,n,temp : INTEGER;
+BEGIN
+    Write("insert the array length : ");
+    Read(n);
+    FOR i FROM 0 TO n-1 DO
+        Read(t[i]);
+    END_FOR
+
+    FOR i FROM 1 TO n-1 DO
+        j:= i-1;
+        temp:=t[i];
+        WHILE (j>=0 && temp<t[j] ) DO
+            t[j+1]:=t[j];
+            j--;
+        END_WHILE
+        j++
+        t[j]:=temp;
+    END_FOR
+
+    Write(" sorted array : ");
+    FOR i FROM 0 TO n-1 DO
+        Write(t[i]);
+    END_FOR
+END
